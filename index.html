@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique Florist Montréal — Same-Day Flowers | Maison Fleur</title>
+<meta name="description" content="Handcrafted floral arrangements in Outremont, Montréal. Weddings, events, and same-day delivery. Order your bouquet today.">
+<meta property="og:title" content="Maison Fleur — Boutique Florist, Montréal">
+<meta property="og:description" content="Handcrafted arrangements for every moment that matters.">
+<meta property="og:image" content="hero.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Florist",
+  "name": "Maison Fleur",
+  "image": "hero.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1214 Avenue Laurier Ouest",
+    "addressLocality": "Montréal",
+    "addressRegion": "QC",
+    "addressCountry": "CA"
+  },
+  "telephone": "+1-514-555-0142",
+  "priceRange": "$$",
+  "openingHours": "Tu-Su 09:00-18:00"
+}
+</script>
+<style>
+  :root { --blush:#d4a5a5; --sage:#9caf88; --cream:#faf6f0; --ink:#3d3634; --rose:#c07f7f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:Georgia,"Times New Roman",serif; background:var(--cream); color:var(--ink); line-height:1.8; }
+
+  nav { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 5%; position:sticky; top:0; z-index:100; background:rgba(250,246,240,0.92); backdrop-filter:blur(8px); }
+  .logo { font-size:1.35rem; font-weight:bold; letter-spacing:1px; color:var(--ink); text-decoration:none; }
+  .logo span { color:var(--rose); }
+  nav .links a { color:var(--ink); text-decoration:none; margin-left:1.4rem; font-size:.92rem; }
+  nav .links a:hover { color:var(--rose); }
+  .lang-btn { background:none; border:1px solid var(--blush); color:var(--rose); padding:4px 14px; border-radius:20px; cursor:pointer; font-weight:bold; margin-left:1.4rem; font-size:.82rem; font-family:inherit; }
+
+  /* HERO with Ken Burns slow-zoom (video feel, image weight) */
+  .hero { position:relative; height:82vh; overflow:hidden; }
+  .hero img { width:100%; height:100%; object-fit:cover; animation:kenburns 24s ease-in-out infinite alternate; }
+  @keyframes kenburns {
+    from { transform:scale(1) translate(0,0); }
+    to   { transform:scale(1.12) translate(-2%,2%); }
+  }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(rgba(250,246,240,.25),rgba(61,54,52,.45)); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:2rem; }
+  .badge { background:rgba(250,246,240,.9); color:var(--rose); font-size:.72rem; letter-spacing:3px; text-transform:uppercase; padding:.4rem 1.2rem; border-radius:20px; margin-bottom:1.2rem; }
+  .hero h1 { font-size:clamp(2.4rem,6vw,4.4rem); color:#fff; font-weight:normal; text-shadow:0 2px 20px rgba(0,0,0,.3); }
+  .hero p { color:#f5efe8; max-width:520px; margin:1rem 0 2rem; font-size:1.1rem; }
+  .cta-btns { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .btn-solid, .btn-outline { padding:.85rem 2rem; border-radius:40px; text-decoration:none; font-size:.95rem; font-weight:bold; }
+  .btn-solid { background:var(--rose); color:#fff; }
+  .btn-outline { border:2px solid #fff; color:#fff; }
+  .btn-solid:hover { background:#a96666; }
+  .btn-outline:hover { background:rgba(255,255,255,.15); }
+
+  section { padding:5rem 5%; max-width:1100px; margin:0 auto; }
+  h2 { font-size:2rem; font-weight:normal; text-align:center; margin-bottom:.4rem; }
+  .sub { text-align:center; color:#8a7d76; margin-bottom:3rem; font-style:italic; }
+
+  .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.6rem; }
+  .svc { background:#fff; border-radius:16px; padding:2rem 1.6rem; text-align:center; box-shadow:0 3px 14px rgba(61,54,52,.06); transition:transform .25s; }
+  .svc:hover { transform:translateY(-6px); }
+  .svc .icon { font-size:2rem; }
+  .svc h3 { color:var(--rose); font-size:1.1rem; margin:.7rem 0 .3rem; }
+  .svc p { font-size:.9rem; color:#7a6e68; }
+
+  /* INFINITE MARQUEE GALLERY */
+  .gallery-strip { overflow:hidden; padding:1rem 0 3rem; position:relative; }
+  .strip-title { text-align:center; margin-bottom:1.5rem; }
+  .marquee { overflow:hidden; }
+  .marquee-track { display:flex; gap:1.2rem; width:max-content; animation:scrollX 36s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state:paused; }
+  @keyframes scrollX { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .marquee-track img { width:280px; height:200px; object-fit:cover; border-radius:14px; }
+
+  .reviews { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
+  .review { background:#fff; border-radius:16px; padding:2rem; box-shadow:0 3px 14px rgba(61,54,52,.06); }
+  .stars { color:var(--rose); letter-spacing:3px; }
+  .review p { font-style:italic; color:#6d625c; margin:.8rem 0; font-size:.95rem; }
+  .review .who { display:flex; align-items:center; gap:12px; }
+  .avatar { width:42px; height:42px; border-radius:50%; background:var(--blush); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:bold; }
+
+  .visit { background:#fff; border-radius:20px; padding:3rem 2rem; text-align:center; box-shadow:0 3px 14px rgba(61,54,52,.06); }
+  .visit h2 { margin-bottom:1rem; }
+  .visit .hours { color:#8a7d76; font-size:.95rem; margin-top:1rem; }
+
+  footer { background:var(--ink); color:#c9beb7; text-align:center; padding:2.5rem 5%; font-size:.88rem; }
+  footer .name { color:var(--blush); font-size:1.2rem; letter-spacing:2px; margin-bottom:.4rem; }
+
+  .fr { display:none; }
+  body.lang-fr .en { display:none; }
+  body.lang-fr .fr { display:block; }
+  @media (prefers-reduced-motion:reduce) {
+    .hero img, .marquee-track { animation:none; }
+  }
+</style>
+</head>
+<body class="lang-en">
+
+<nav>
+  <a href="#" class="logo">MAISON <span>FLEUR</span></a>
+  <div class="links">
+    <a href="#services"><span class="en">Services</span><span class="fr">Services</span></a>
+    <a href="#gallery"><span class="en">Gallery</span><span class="fr">Galerie</span></a>
+    <a href="#reviews"><span class="en">Reviews</span><span class="fr">Avis</span></a>
+    <a href="#visit"><span class="en">Visit</span><span class="fr">Visite</span></a>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">FR</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <img src="hero.jpg" alt="Florist arranging pastel peonies and lavender in a sunlit Montréal flower atelier">
+  <div class="hero-overlay">
+    <div class="badge">
+      <span class="en">Outremont's Boutique Florist</span>
+      <span class="fr">Fleuriste boutique d'Outremont</span>
+    </div>
+    <h1><span class="en">Handcrafted with love,<br>for every moment that matters.</span><span class="fr">Faits avec amour,<br>pour chaque moment qui compte.</span></h1>
+    <p><span class="en">Weddings, celebrations, sympathies — fresh arrangements delivered same-day across Montréal.</span><span class="fr">Mariages, célébrations, sympathies — arrangements frais livrés le jour même partout à Montréal.</span></p>
+    <div class="cta-btns">
+      <a href="#visit" class="btn-solid"><span class="en">Order Flowers</span><span class="fr">Commander</span></a>
+      <a href="#gallery" class="btn-outline"><span class="en">View Our Work</span><span class="fr">Voir nos créations</span></a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <h2><span class="en">Our Services</span><span class="fr">Nos Services</span></h2>
+  <p class="sub"><span class="en">From everyday joy to once-in-a-lifetime celebrations.</span><span class="fr">De la joie quotidienne aux célébrations d'une vie.</span></p>
+  <div class="services">
+    <div class="svc"><div class="icon">🌹</div><h3><span class="en">Everyday Bouquets</span><span class="fr">Bouquets Quotidiens</span></h3><p><span class="en">Seasonal stems arranged fresh each morning, wrapped in kraft and ribbon.</span><span class="fr">Fleurs de saison arrangées fraîches chaque matin, emballées kraft et ruban.</span></p></div>
+    <div class="svc"><div class="icon">💍</div><h3><span class="en">Weddings</span><span class="fr">Mariages</span></h3><p><span class="en">Bridal bouquets, arch florals, and tablescapes designed around your story.</span><span class="fr">Bouquets de mariée, arches florales et compositions autour de votre histoire.</span></p></div>
+    <div class="svc"><div class="icon">🕊️</div><h3><span class="en">Sympathy</span><span class="fr">Sympathies</span></h3><p><span class="en">Thoughtful arrangements delivered with care and discretion, same-day.</span><span class="fr">Arrangements attentifs livrés avec soin et discrétion, le jour même.</span></p></div>
+    <div class="svc"><div class="icon">📦</div><h3><span class="en">Subscriptions</span><span class="fr">Abonnements</span></h3><p><span class="en">Weekly or monthly blooms for homes and offices — always something new.</span><span class="fr">Fleurs hebdomadaires ou mensuelles pour maison et bureau — toujours du nouveau.</span></p></div>
+  </div>
+</section>
+
+<div class="gallery-strip" id="gallery">
+  <div class="strip-title">
+    <h2><span class="en">Recent Creations</span><span class="fr">Créations Récentes</span></h2>
+    <p class="sub"><span class="en">Every arrangement is one of a kind — just like the moment it marks.</span><span class="fr">Chaque arrangement est unique — comme le moment qu'il marque.</span></p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <img src="bouquet-1.jpg" alt="Blush pink garden roses wrapped in kraft paper with eucalyptus">
+      <img src="bouquet-2.jpg" alt="Dried lavender bundle with white ranunculus in a ceramic vase">
+      <img src="hero.jpg" alt="Florist's hands crafting a pastel bouquet in the atelier">
+      <img src="bouquet-1.jpg" alt="Romantic pink rose bouquet ready for same-day delivery in Montréal">
+      <img src="bouquet-2.jpg" alt="Artisanal lavender and ranunculus arrangement on aged wood">
+      <img src="hero.jpg" alt="Peonies and lavender being arranged by hand at Maison Fleur">
+    </div>
+  </div>
+</div>
+
+<section id="reviews">
+  <h2><span class="en">What Our Customers Say</span><span class="fr">Ce Que Disent Nos Clients</span></h2>
+  <p class="sub"><span class="en">Honoured to be part of so many special moments.</span><span class="fr">Honorés de faire partie de tant de moments spéciaux.</span></p>
+  <div class="reviews">
+    <div class="review"><div class="stars">★★★★★</div><p><span class="en">"The anniversary bouquet was stunning — my wife cried. Best florist in Montréal."</span><span class="fr">« Le bouquet d'anniversaire était magnifique — ma femme a pleuré. Meilleur fleuriste de Montréal. »</span></p><div class="who"><div class="avatar">J</div><strong>James R.</strong></div></div>
+    <div class="review"><div class="stars">★★★★★</div><p><span class="en">"They helped us during a difficult time with the most thoughtful sympathy arrangement."</span><span class="fr">« Ils nous ont aidés pendant un moment difficile avec l'arrangement de sympathie le plus attentionné. »</span></p><div class="who"><div class="avatar">M</div><strong>Michael B.</strong></div></div>
+    <div class="review"><div class="stars">★★★★★</div><p><span class="en">"Wedding flowers beyond our dreams. Everyone was in awe."</span><span class="fr">« Fleurs de mariage au-delà de nos rêves. Tout le monde était émerveillé. »</span></p><div class="who"><div class="avatar">S</div><strong>Sophie L.</strong></div></div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="visit">
+    <h2><span class="en">Visit Our Atelier</span><span class="fr">Visitez Notre Atelier</span></h2>
+    <p><span class="en">1214 Avenue Laurier Ouest, Outremont, Montréal — two blocks from Laurier metro.</span><span class="fr">1214, avenue Laurier Ouest, Outremont, Montréal — à deux pâtés du métro Laurier.</span></p>
+    <p><strong>(514) 555-0142</strong> &nbsp;•&nbsp; bonjour@maisonfleur.ca</p>
+    <p class="hours"><span class="en">Tuesday to Sunday, 9 AM – 6 PM · Same-day delivery on orders before 2 PM</span><span class="fr">Mardi au dimanche, 9 h – 18 h · Livraison le jour même sur commande avant 14 h</span></p>
+  </div>
+</section>
+
+<footer>
+  <p class="name">MAISON FLEUR</p>
+  <p><span class="en">© 2026 — Concept demo by Solutions Marketing VIP · Plan C: Boutique Editorial</span><span class="fr">© 2026 — Démo conceptuelle par Solutions Marketing VIP · Plan C : Éditorial Boutique</span></p>
+</footer>
+
+<script>
+function toggleLang() {
+  var b = document.body, btn = document.getElementById('langBtn');
+  if (b.classList.contains('lang-en')) { b.className='lang-fr'; btn.textContent='EN'; }
+  else { b.className='lang-en'; btn.textContent='FR'; }
+}
+</script>
+</body>
+</html>
